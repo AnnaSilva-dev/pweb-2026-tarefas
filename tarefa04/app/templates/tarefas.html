@@ -8,10 +8,13 @@
 <body>
     <h1>Lista de Tarefas</h1>
     {% for tarefa in tarefas %}
-    <li>
-        <p>{{ tarefa.nome }}</p>
-        <p>{{ tarefa.status }}</p>
-        <p>{{ tarefa.prazo }}</p>
+    <ul>
+        <li>
+            <p>Tarefa: {{ tarefa.nome }}</p>
+            <p>Status: {{ tarefa.get_status_display }}</p>
+            <p>Prazo: {{ tarefa.prazo }}</p>
+        </li>
+    </ul>
     {% endfor %}
     <a href="/">Voltar</a>
 </body>

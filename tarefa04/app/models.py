@@ -12,4 +12,10 @@ class Tarefa(models.Model):
 
 
     def __str__(self):
-        return self.nome
+        if self.status == 'P':
+            status = 'Tarefa pendente'
+        elif self.status == 'A':
+            status = 'Tarefa em andamento'
+        else:
+            status = 'Tarefa concluída'
+        return f"Nome:{self.nome}, Status: {status}, Prazo: {self.prazo}"
